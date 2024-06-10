@@ -12,6 +12,16 @@ function getComputerChoice() {
     }
 }
 
-let f = getComputerChoice();
+function getHumanChoice() {
+    let choice = prompt("Choose between rock, paper or scissor:");
+    while (choice !== "rock" && choice !== "paper" && choice !== "scissor") {
+        choice = prompt("Wrong input! Please try again!\nChoose between rock, paper or scissor:");
+    }
+    return choice;
+}
 
-console.log(f);
+let h = getHumanChoice();
+let c = getComputerChoice();
+
+console.log(h);
+console.log(c);
