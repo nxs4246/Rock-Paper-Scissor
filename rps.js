@@ -57,10 +57,35 @@ function declareWinner() {
     } else {
         resultElem.textContent += " It's an overall draw!";
     }
+    resetButton();
 }
 
 function resetButton() {
+    const btnElem = document.createElement("button");
+    btnElem.className = "choice_btn";
+    btnElem.textContent = "Play Again!";
 
+    btnElem.addEventListener("click", () => {
+        // Reset the game state
+        human_score = 0;
+        computer_score = 0;
+        rounds_played = 0;
+
+        // Clear the results and scores
+        const resultElem = document.querySelector("#result");
+        const scoreElem = document.querySelector("#scoreboard");
+        const winnerElem = document.querySelector("#winner");
+
+        resultElem.innerHTML = '5 rounds of Rock-Paper-Scissor.';
+        scoreElem.innerHTML = ''; 
+        winnerElem.innerHTML = ''; 
+
+        // Remove the reset button
+        btnElem.remove();
+    });
+
+    const resetElem = document.querySelector("#reset");
+    resetElem.appendChild(btnElem);
 }
 
 // Give a random choice between r/p/s
