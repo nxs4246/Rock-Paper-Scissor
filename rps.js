@@ -24,13 +24,13 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
+/*function getHumanChoice() {
     let choice = prompt("Choose between rock, paper or scissor:").toLowerCase();
     while (choice !== "rock" && choice !== "paper" && choice !== "scissor") {
         choice = prompt("Wrong input! Please try again!\nChoose between rock, paper or scissor:");
     }
     return choice;
-}
+}*/
 
 function updateResult(message) {
     const resultElem = document.querySelector("#result");
@@ -102,8 +102,7 @@ function playRound(humanChoice, computerChoice) {
 
 
 
-
-  function playGame() {
+/*function playGame() {
 
     let humanScore = 0; 
     let computerScore = 0;
@@ -122,4 +121,4 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-playGame();  
+playGame();*/
