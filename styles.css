@@ -24,7 +24,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 24px;
+    margin: 32px;
+    align-items: center;
+    justify-content: center;
 }
 
 .choice_btn {
@@ -36,7 +38,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     border-radius: 8px;
     transition-duration: 0.4s;
 }
@@ -46,7 +48,16 @@ body {
 }
 
 .textfield {
-    font-size: 24px;
+    font-size: 22px;
     color:#e7e7e7;
     margin: 8px;
+    text-align: center;
+}
+
+.winner-textfield {
+    margin: 32px;
+    font-size: 28px;
+    color:#e7e7e7;
+    font-weight: bold;
+    text-align: center;
 }

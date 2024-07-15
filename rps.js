@@ -30,8 +30,22 @@ function playGame(humanChoice) {
 // Function to update scoreboard
 function updateScore(human_score, computer_score) {
     const scoreElem = document.querySelector("#scoreboard");
-    scoreElem.textContent = `Scoreboard: Human: ${human_score} - Computer: ${computer_score}`;
+
+    // Clear previous content
+    scoreElem.innerHTML = '';
+
+    // Create and append the round number element
+    const textElem = document.createElement('div');
+    textElem.textContent = `Scoreboard:`;
+    scoreElem.appendChild(textElem);
+
+    // Create and append the score element
+    const scoreTextElem = document.createElement('div');
+    scoreTextElem.className = 'textfield'; // Assign the class 'textfield'
+    scoreTextElem.textContent = `Human: ${human_score} - Computer: ${computer_score}`;
+    scoreElem.appendChild(scoreTextElem);
 }
+
 
 // Function to declare winner when 5 are played
 function declareWinner() {
@@ -112,6 +126,19 @@ function playRound(humanChoice, computerChoice) {
 // Updates result of each round by displaying a message
 function updateResult(message) {
     const resultElem = document.querySelector("#result");
-    resultElem.textContent = `Round: ${rounds_played + 1} - ${message}`;
+
+    // Clear previous content
+    resultElem.innerHTML = ''; 
+
+    // Create and append the round number
+    const roundElem = document.createElement('div');
+    roundElem.textContent = `Round ${rounds_played + 1}:`;
+    resultElem.appendChild(roundElem);
+
+    // Create and append the message
+    const messageElem = document.createElement('div');
+    messageElem.className = 'textfield';
+    messageElem.textContent = message;
+    resultElem.appendChild(messageElem);
 }
 
