@@ -112,5 +112,6 @@ function playRound(humanChoice, computerChoice) {
 // Updates result of each round by displaying a message
 function updateResult(message) {
     const resultElem = document.querySelector("#result");
-    resultElem.textContent = message;
+    resultElem.textContent = `Round: ${rounds_played + 1} - ${message}`;
 }
+

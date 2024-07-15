@@ -8,11 +8,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="rock" class="choice_btn">Rock</button>
-    <button id="paper" class="choice_btn">Paper</button>
-    <button id="scissor" class="choice_btn">Scissor</button>
-    <div id="result"></div>
-    <div id="scoreboard"></div>
-    <div id="winner"></div>
+    <div class="container">
+
+        <video autoplay loop muted plays-inline class="background_vid">
+            <source src="resources/hot.mp4" type="video/mp4">
+        </video>
+
+        <div id="result" class="textfield"></div>
+
+        <div class="buttons">
+            <button id="rock" class="choice_btn">Rock</button>
+            <button id="paper" class="choice_btn">Paper</button>
+            <button id="scissor" class="choice_btn">Scissor</button>
+        </div>
+        
+        <div id="scoreboard" class="textfield"></div>
+        <div id="winner" class="textfield"></div>
+    </div>
+    
 </body>
 </html>
