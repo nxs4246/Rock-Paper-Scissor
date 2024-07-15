@@ -1,14 +1,37 @@
-document.getElementById('rock').addEventListener('click', function() {
-    playRound("rock", getComputerChoice());
-});
 
-document.getElementById('paper').addEventListener('click', function() {
-    playRound("paper", getComputerChoice());
-});
+function playGame() {
+    let human_score = 0;
+    let computer_score = 0;
 
-document.getElementById('scissor').addEventListener('click', function() {
-    playRound("scissor", getComputerChoice());
-});
+    for(let i = 1; i <= 5; i++) {
+        document.getElementById('rock').addEventListener('click', function() {
+            let scores;
+            scores = playRound("rock", getComputerChoice());
+            human_score = human_score + scores.humanScore;
+            computer_score = computer_score + scores.computerScore;
+        });
+
+        document.getElementById('paper').addEventListener('click', function() {
+            let scores;
+            scores = playRound("paper", getComputerChoice());
+            human_score = human_score + scores.humanScore;
+            computer_score = computer_score + scores.computerScore;
+        });
+
+        document.getElementById('scissor').addEventListener('click', function() {
+            let scores;
+            scores = playRound("scissor", getComputerChoice());
+            human_score = human_score + scores.humanScore;
+            computer_score = computer_score + scores.computerScore;
+        });
+    }
+}
+
+function updateScore(human_score, computer_score) {
+    const scoreElem = document.querySelector("#scoreboard");
+
+}
+
 
 function getComputerChoice() {
     let max = 3;
@@ -24,18 +47,11 @@ function getComputerChoice() {
     }
 }
 
-/*function getHumanChoice() {
-    let choice = prompt("Choose between rock, paper or scissor:").toLowerCase();
-    while (choice !== "rock" && choice !== "paper" && choice !== "scissor") {
-        choice = prompt("Wrong input! Please try again!\nChoose between rock, paper or scissor:");
-    }
-    return choice;
-}*/
-
 function updateResult(message) {
     const resultElem = document.querySelector("#result");
     resultElem.textContent = message;
 }
+
 
 function playRound(humanChoice, computerChoice) {
 
@@ -100,25 +116,4 @@ function playRound(humanChoice, computerChoice) {
     return {humanScore, computerScore};
 }
 
-
-
-/*function playGame() {
-
-    let humanScore = 0; 
-    let computerScore = 0;
-
-    for(let i = 1; i <= 1; i++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        let scores = playRound(humanChoice, computerChoice);
-        humanScore += scores.humanScore;
-        computerScore += scores.computerScore;
-
-        console.log("Scores after round " + i + ":");
-        console.log("Player Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-        console.log("\n");
-    }
-}
-
-playGame();*/
+playGame();
