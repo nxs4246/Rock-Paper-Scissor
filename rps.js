@@ -1,3 +1,15 @@
+document.getElementById('rock').addEventListener('click', function() {
+    playRound("rock", getComputerChoice());
+});
+
+document.getElementById('paper').addEventListener('click', function() {
+    playRound("paper", getComputerChoice());
+});
+
+document.getElementById('scissor').addEventListener('click', function() {
+    playRound("scissor", getComputerChoice());
+});
+
 function getComputerChoice() {
     let max = 3;
     let min = 0;
@@ -20,44 +32,31 @@ function getHumanChoice() {
     return choice;
 }
 
-/* function getHumanChoice() {
-    let choice = "";
-
-    const btn1 = document.querySelector("#rock");
-    btn1.addEventListener("click", () => {
-        choice = "rock";
-        console.log(choice);
-    })
-
-    const btn2 = document.querySelector("#paper");
-    btn2.addEventListener("click", () => {
-        choice = "paper";
-        console.log(choice);
-    })
-
-    const btn3 = document.querySelector("#scissor");
-    btn3.addEventListener("click", () => {
-        choice = "scissor";
-        console.log(choice);
-    })
-
-    return choice;
-} */
+function updateResult(message) {
+    const resultElem = document.querySelector("#result");
+    resultElem.textContent = message;
+}
 
 function playRound(humanChoice, computerChoice) {
 
     let humanScore = 0; 
     let computerScore = 0;
+    let msg = "";
 
     switch(humanChoice) {
         case "rock":
             if(computerChoice == "rock") {
                 console.log("It's a draw!");
+                msg = "It's a draw!";
+                computerScore++;
+                humanScore++;
             } else if(computerChoice == "paper") {
                 console.log("You lose! Paper beats Rock.");
+                msg = "You lose! Paper beats Rock.";
                 computerScore++;
             } else {
-                console.log("You win! Rock beats Scissor.")
+                console.log("You win! Rock beats Scissor.");
+                msg = "You win! Rock beats Scissor.";
                 humanScore++;
             }
             break;
@@ -65,11 +64,16 @@ function playRound(humanChoice, computerChoice) {
         case "paper":
             if(computerChoice == "paper") {
                 console.log("It's a draw!");
+                msg = "It's a draw!";
+                computerScore++;
+                humanScore++;
             } else if(computerChoice == "scissor") {
                 console.log("You lose! Scissor beats Paper.");
+                msg = "You lose! Scissor beats Paper.";
                 computerScore++;
             } else {
-                console.log("You win! Paper beats Rock.")
+                console.log("You win! Paper beats Rock.");
+                msg = "You win! Paper beats Rock.";
                 humanScore++;
             }
             break;
@@ -77,20 +81,29 @@ function playRound(humanChoice, computerChoice) {
         case "scissor":
             if(computerChoice == "scissor") {
                 console.log("It's a draw!");
+                msg = "It's a draw!";
+                computerScore++;
+                humanScore++;
             } else if(computerChoice == "rock") {
                 console.log("You lose! Rock beats Scissor.");
+                msg = "You lose! Rock beats Scissor.";
                 computerScore++;
             } else {
-                console.log("You win! Scissor beats Paper.")
+                console.log("You win! Scissor beats Paper.");
+                msg = "You win! Scissor beats Paper.";
                 humanScore++;
             }
             break;
     }
 
+    updateResult(msg);
     return {humanScore, computerScore};
 }
 
-function playGame() {
+
+
+
+  function playGame() {
 
     let humanScore = 0; 
     let computerScore = 0;
@@ -109,4 +122,4 @@ function playGame() {
     }
 }
 
-playGame();
+playGame();  
