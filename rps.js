@@ -45,6 +45,10 @@ function declareWinner() {
     }
 }
 
+function resetButton() {
+
+}
+
 // Give a random choice between r/p/s
 function getComputerChoice() {
     let rand = Math.random() * 3;
