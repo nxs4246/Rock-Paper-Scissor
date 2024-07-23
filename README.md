@@ -1,4 +1,4 @@
-# rock-paper-scissor
+# Rock-Paper-Scissor
 5 rounds of the classic game Rock-Paper-Scissor written in HTML/CSS/Javascript.\
 Deployed here: https://nxs4246.github.io/rock-paper-scissor/
 
