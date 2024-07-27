@@ -35,8 +35,8 @@ body {
     background-color: #e7e7e7;
     border: none;
     color: black;
-    min-width: 150px;
-    padding: 24px;
+    width: fit-content;
+    padding: 14px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -48,6 +48,11 @@ body {
 
 .choice_btn:hover {
     background-color: #9e9e9e;
+}
+
+.icon {
+    width: 150px;
+    height: 150px;
 }
 
 .textfield {
@@ -68,5 +73,10 @@ body {
 @media (max-width: 600px) {
     .buttons {
         flex-direction: column;
+    }
+
+    .icon {
+        width: 100px;
+        height: 100px;
     }
 }
